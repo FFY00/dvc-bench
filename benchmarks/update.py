@@ -17,7 +17,10 @@ class UpdateImportUrlToRemoteBench(BaseRemoteBench):
         super().setup(remote)
         data_url = self.setup_data("100x1024")
         self.dvc(
-            "import-url", data_url, "stage", "--to-remote",
+            "import-url",
+            data_url,
+            "stage",
+            "--to-remote",
         )
         self.setup_data("200x1024", url=data_url)
 
